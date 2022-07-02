@@ -198,6 +198,7 @@ input:focus{
     display: grid;
     grid-template-columns: 7fr 3fr;
     padding: 30px;
+    gap: 50px;
 }
 .title{
     font-family: 'roboto condensed';
@@ -212,13 +213,19 @@ input:focus{
 }
 .project-card{
     display: grid;
+    height: 175px;
     gap: 10px;
     background-color: white;
     padding: 20px;
     border-left: 5px solid teal;
     border-radius: 10px;
     grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr;
     align-items: center;
+    transition: all 0.2s;
+}
+.project-card:hover{
+    box-shadow: 10px 10px 10px darkgray;
 }
 .project-title{
     font-family: 'roboto condensed';
@@ -227,18 +234,48 @@ input:focus{
 .project-description{
     font-family: 'roboto condensed';
     color: gray;
-    overflow: auto;
+    overflow: scroll;
     grid-column: 1/4;
+    grid-row: 2/3;
+    height: 100%;
 }
 .project-icon{
     height: 20px;
     width: 20px;
     cursor: pointer;
 }
+.project-icon:hover{
+    filter: invert(79%) sepia(16%) saturate(7384%) hue-rotate(352deg) brightness(94%) contrast(93%);
+}
 .project-actions{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
     grid-column: 2/4;
 }
+.content-container > .right{
+    display: grid;
 
+}
+.announcements-container{
+    display: grid;
+    gap: 20px;
+}
+.announcement-card{
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    display: grid;
+    gap: 30px;
+}
+.announcement:not(:last-child){
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 27px;
+}
+.announcement{
+    display: grid;
+    gap: 5px;
+}
 /*extras*/
 ::placeholder{
     color: white;
